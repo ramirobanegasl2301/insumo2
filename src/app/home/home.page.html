@@ -1,0 +1,26 @@
+<!-- app.component.html -->
+<ion-content>
+  <ion-item>
+    <ion-label>ID:</ion-label>
+    <ion-input [(ngModel)]="pokemonId" placeholder="Enter Pokemon ID"></ion-input>
+    <ion-button (click)="buscarPokemonPorId()">Buscar por ID</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nombre:</ion-label>
+    <ion-input [(ngModel)]="pokemonName" placeholder="Enter Pokemon Name"></ion-input>
+    <ion-button (click)="buscarPokemonPorNombre()">Buscar por Nombre</ion-button>
+  </ion-item>
+
+  <div *ngIf="pokemonInfo">
+    <ion-card>
+      <ion-card-header>
+        {{ pokemonInfo.name }}
+      </ion-card-header>
+      <ion-card-content>
+        <img [src]="pokemonInfo.sprites.front_default" alt="{{ pokemonInfo.name }}">
+        <!-- Agrega más detalles según tus necesidades -->
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
